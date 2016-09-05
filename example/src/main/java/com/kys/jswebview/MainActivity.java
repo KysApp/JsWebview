@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bridgeWebView = new BridgeWebView(this);
+        bridgeWebView = (BridgeWebView) findViewById(R.id.webview);
         bridgeWebView.loadUrl("http://192.168.199.120/wap_app/views/appBrigeTest.html");//测试js交互的网页，在vpn的网络下进行测试
         bridgeWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);  //设置 缓存模式
         //各种js交互的测试，如果需要测试页面跳转，需要new其他页面，来进行跳转
