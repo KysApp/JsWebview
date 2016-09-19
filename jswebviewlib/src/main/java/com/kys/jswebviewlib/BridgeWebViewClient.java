@@ -7,9 +7,7 @@ import android.webkit.WebViewClient;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-/**
- * Created by bruce on 10/28/15.
- */
+
 public class BridgeWebViewClient extends WebViewClient {
     private BridgeWebView webView;
 

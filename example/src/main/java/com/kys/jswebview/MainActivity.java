@@ -1,9 +1,11 @@
 package com.kys.jswebview;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.kys.jswebviewlib.BridgeData;
@@ -14,7 +16,7 @@ import com.kys.jswebviewlib.CallBackFunction;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private BridgeWebView bridgeWebView;
 
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bridgeWebView = (BridgeWebView) findViewById(R.id.webview);
-        bridgeWebView.loadUrl("http://192.168.199.120/wap_app/views/appBrigeTest.html");//测试js交互的网页，在vpn的网络下进行测试
         bridgeWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);  //设置 缓存模式
         //各种js交互的测试，如果需要测试页面跳转，需要new其他页面，来进行跳转
         toGoodsInfo();
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         showProgress();
         dismissProgress();
         showTitleBar();
-        bridgeWebView.loadUrl(getIntent().getStringExtra("url"));
-        BridgeData data = new BridgeData("id", getIntent().getStringExtra("groupbuy_id"));
-        callWeb("jsFunc_ReceiveParam", new Gson().toJson(data));
+        bridgeWebView.loadUrl("http://192.168.199.120/wap_app/views/appBrigeTest.html");//测试js交互的网页，在vpn的网络下进行测试
+//        BridgeData data = new BridgeData("id", getIntent().getStringExtra("groupbuy_id"));
+//        callWeb("jsFunc_ReceiveParam", new Gson().toJson(data));
     }
 
     /**
@@ -185,9 +186,10 @@ public class MainActivity extends AppCompatActivity {
         webCallApp("appFunc_Jump2BuyCart", new BridgeHandler() {
             @Override
             public void handler(String data, CallBackFunction function) {
-                Intent intent = new Intent();
-//                intent.setClass(JsWebviewActivity.this, ShoppingcartAc.class);
-                startActivity(intent);
+                Toast.makeText(MainActivity.this, "ok", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent();
+////                intent.setClass(JsWebviewActivity.this, ShoppingcartAc.class);
+//                startActivity(intent);
             }
         });
     }
