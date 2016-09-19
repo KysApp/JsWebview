@@ -1,4 +1,4 @@
-  使用  compile 'com.kys.jswebviewlib:jswebviewlib:1.0.0'  将项目导入studio
+  使用  compile 'com.kys.jswebviewlib:jswebviewlib:1.0.1'  将项目导入studio
 
 
      webview和js的交互通过以下方法即可：
