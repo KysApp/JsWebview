@@ -3,12 +3,9 @@ package com.kys.jswebview;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.kys.jswebviewlib.BridgeData;
 import com.kys.jswebviewlib.BridgeHandler;
 import com.kys.jswebviewlib.BridgeWebView;
 import com.kys.jswebviewlib.CallBackFunction;
