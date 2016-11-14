@@ -17,11 +17,13 @@ public class MainActivity extends Activity {
 
     private BridgeWebView bridgeWebView;
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bridgeWebView = (BridgeWebView) findViewById(R.id.webview);
+        bridgeWebView.setProgressBarColor(getResources().getDrawable(R.drawable.progress_bar_draw));//设置进度条的颜色
         bridgeWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);  //设置 缓存模式
         //各种js交互的测试，如果需要测试页面跳转，需要new其他页面，来进行跳转
         toGoodsInfo();
@@ -34,7 +36,8 @@ public class MainActivity extends Activity {
         showProgress();
         dismissProgress();
         showTitleBar();
-        bridgeWebView.loadUrl("http://192.168.199.120/wap_app/views/appBrigeTest.html");//测试js交互的网页，在vpn的网络下进行测试
+        bridgeWebView.loadUrl("https://www.baidu.com/");
+//        bridgeWebView.loadUrl("http://192.168.199.120/wap_app/views/appBrigeTest.html");//测试js交互的网页，在vpn的网络下进行测试
 //        BridgeData data = new BridgeData("id", getIntent().getStringExtra("groupbuy_id"));
 //        callWeb("jsFunc_ReceiveParam", new Gson().toJson(data));
     }

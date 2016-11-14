@@ -2,6 +2,7 @@ package com.kys.jswebviewlib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Looper;
 import android.os.SystemClock;
@@ -64,6 +65,13 @@ public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
 		init();
 	}
 
+	/**
+	 * 设置进度条的颜色，非必设项目，有默认值
+	 * @param drawable
+     */
+	public void setProgressBarColor(Drawable drawable){
+		progressBar.setProgressDrawable(drawable);
+	}
 	/**
 	 * 
 	 * @param handler
